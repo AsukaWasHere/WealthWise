@@ -28,7 +28,7 @@ engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# --- DATABASE MODELS (This defines the structure of our table) ---
+# --- DATABASE MODELS ---
 class AnalysisRequest(Base):
     __tablename__ = "analysis_requests"
     id = Column(Integer, primary_key=True, index=True)
@@ -42,10 +42,10 @@ class AnalysisRequest(Base):
     suggested_action = Column(Text, nullable=True)
     graph_b64 = Column(Text, nullable=True)
 
-# This command creates the table in your Neon database if it doesn't already exist.
+# Create the database tables if they don't exist
 Base.metadata.create_all(bind=engine)
 
-# Dependency to get a fresh DB session for each API request.
+# Dependency to get a DB session for each request
 def get_db():
     db = SessionLocal()
     try:
@@ -160,7 +160,7 @@ def analyze_profile(profile: UserProfile, db: Session = Depends(get_db)):
     ai_analysis = get_analysis_and_graph_data_from_nova(profile, historical_data)
     graph_b64 = plot_analysis_graph(ai_analysis.get("graph_data", {}))
 
-    # --- NEW: SAVE THE REQUEST AND RESPONSE TO THE DATABASE ---
+    # --- SAVE THE REQUEST AND RESPONSE TO THE DATABASE ---
     db_request = AnalysisRequest(
         age=profile.age,
         income=profile.income,
@@ -181,3 +181,4 @@ def analyze_profile(profile: UserProfile, db: Session = Depends(get_db)):
     }
     
     return {"status": "success", "insight": full_response}
+
