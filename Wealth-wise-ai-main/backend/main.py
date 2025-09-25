@@ -56,7 +56,7 @@ def get_db():
 # --- CORS MIDDLEWARE ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # In production, restrict this to your Vercel URL
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -69,7 +69,8 @@ class UserProfile(BaseModel):
     goals: str
     current_investments: str
 
-# --- DATA LAYER & AI SERVICES (These functions remain the same) ---
+# --- DATA LAYER & AI SERVICES ---
+
 def get_historical_market_data(api_key: str):
     url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey={api_key if api_key else 'demo'}"
     try:
@@ -152,15 +153,11 @@ def read_root():
 
 @app.post("/api/analyze")
 def analyze_profile(profile: UserProfile, db: Session = Depends(get_db)):
-    """
-    Orchestrates data retrieval, AI analysis, graph generation, AND SAVES TO DATABASE.
-    """
     api_key = os.getenv("FINANCIAL_DATA_API_KEY")
     historical_data = get_historical_market_data(api_key)
     ai_analysis = get_analysis_and_graph_data_from_nova(profile, historical_data)
     graph_b64 = plot_analysis_graph(ai_analysis.get("graph_data", {}))
 
-    # --- SAVE THE REQUEST AND RESPONSE TO THE DATABASE ---
     db_request = AnalysisRequest(
         age=profile.age,
         income=profile.income,
@@ -181,4 +178,20 @@ def analyze_profile(profile: UserProfile, db: Session = Depends(get_db)):
     }
     
     return {"status": "success", "insight": full_response}
+```eof
 
+#### **Step 2: Check Your Render Environment Variables**
+To fix the `matplotlib` warning permanently, make sure you have this environment variable set in your Render dashboard under the **"Environment"** tab.
+
+* **Key:** `MPLCONFIGDIR`
+* **Value:** `/var/data/matplotlib`
+
+#### **Step 3: Push to GitHub and Redeploy**
+1.  Save the corrected `main.py` file.
+2.  Commit and push the changes to your GitHub repository.
+    ```bash
+    git add backend/main.py
+    git commit -m "FIX: Add missing os import and correct logic"
+    git push
+    ```
+3.  Render will automatically start a new deployment. This time, the `NameError` will be gone, `matplotlib` will have a place to write its cache, and your application should deploy successfully.`
