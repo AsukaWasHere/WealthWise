@@ -3,181 +3,174 @@ import json
 import boto3
 import requests
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # Use a non-GUI backend for matplotlib
 import matplotlib.pyplot as plt
 import io
 import base64
-from fastapi import FastAPI, HTTPException, Depends
+import psycopg2
+from psycopg2.extras import RealDictCursor
+
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
-from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime
-from sqlalchemy.orm import sessionmaker, Session
-from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
 
 # --- INITIAL SETUP ---
 load_dotenv()
 app = FastAPI()
 
-# --- DATABASE SETUP (SQLAlchemy) ---
-DATABASE_URL = os.getenv("DATABASE_URL")
-if not DATABASE_URL:
-    raise RuntimeError("DATABASE_URL environment variable is not set.")
-
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
-
-# --- DATABASE MODELS (This defines the structure of our table) ---
-class AnalysisRequest(Base):
-    __tablename__ = "analysis_requests"
-    id = Column(Integer, primary_key=True, index=True)
-    age = Column(Integer)
-    income = Column(Integer)
-    goals = Column(Text)
-    current_investments = Column(Text)
-    timestamp = Column(DateTime, default=datetime.utcnow)
-    opportunity = Column(Text, nullable=True)
-    risk_assessment = Column(Text, nullable=True)
-    suggested_action = Column(Text, nullable=True)
-    graph_b64 = Column(Text, nullable=True)
-
-# This command creates the table in your Neon database if it doesn't already exist.
-Base.metadata.create_all(bind=engine)
-
-# Dependency to get a fresh DB session for each API request.
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
 # --- CORS MIDDLEWARE ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # In production, restrict this to your Vercel URL
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# --- DATABASE SETUP ---
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+def get_db_connection():
+    try:
+        conn = psycopg2.connect(DATABASE_URL)
+        return conn
+    except psycopg2.OperationalError as e:
+        raise HTTPException(status_code=500, detail=f"Database connection error: {e}")
+
+def create_table():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS user_profiles (
+            id SERIAL PRIMARY KEY,
+            age INTEGER,
+            income NUMERIC,
+            current_savings NUMERIC,
+            investment_experience TEXT,
+            monthly_budget NUMERIC,
+            goals TEXT[],
+            investment_timeline INTEGER,
+            risk_tolerance TEXT,
+            risk_allocation JSONB,
+            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+        );
+    """)
+    conn.commit()
+    cur.close()
+    conn.close()
+
+create_table()
+
+
 # --- PYDANTIC MODELS ---
 class UserProfile(BaseModel):
     age: int
-    income: int
-    goals: str
-    current_investments: str
+    income: float
+    current_savings: float
+    investment_experience: str
+    monthly_budget: float
+    goals: list[str]
+    investment_timeline: int
+    risk_tolerance: str
 
-# --- DATA LAYER & AI SERVICES (These functions remain the same) ---
-def get_historical_market_data(api_key: str):
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey={api_key if api_key else 'demo'}"
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        data = response.json().get("Time Series (Daily)", {})
-        if not data:
-             raise ValueError("No time series data found in API response.")
-        df = pd.DataFrame.from_dict(data, orient='index')
-        df.index = pd.to_datetime(df.index)
-        df = df.astype(float)
-        return df['4. close'].head(90).to_json()
-    except Exception as e:
-        print(f"Error fetching historical data: {e}")
-        return "{'error': 'Could not fetch historical market data.'}"
+# --- RISK PROFILE FUNCTIONS ---
+def calculate_allocation(age, income, current_savings, investment_exp, monthly_budget, goals, timeline, risk_tolerance):
+    allocation = {"Bonds": 0, "REITs": 0, "Stocks": 0, "Growth Funds": 0, "Crypto": 0}
+    age_factor = 1.2 if age < 30 else 1.0 if age < 45 else 0.8 if age < 60 else 0.5
+    risk_multipliers = {
+        "Conservative": 0.5, "Moderate Conservative": 0.7, "Moderate": 1.0,
+        "Moderate Aggressive": 1.2, "Aggressive": 1.5
+    }
+    risk_factor = risk_multipliers.get(risk_tolerance, 1.0)
+    goal_weights = {
+        "retirement planning": {"Bonds": 30, "REITs": 10, "Stocks": 25, "Growth Funds": 25, "Crypto": 10},
+        "home purchase": {"Bonds": 40, "REITs": 10, "Stocks": 30, "Growth Funds": 15, "Crypto": 5},
+        "education funding": {"Bonds": 20, "REITs": 10, "Stocks": 35, "Growth Funds": 25, "Crypto": 10},
+        "wealth building": {"Bonds": 15, "REITs": 10, "Stocks": 40, "Growth Funds": 25, "Crypto": 10},
+        "emergency fund": {"Bonds": 50, "REITs": 10, "Stocks": 20, "Growth Funds": 15, "Crypto": 5}
+    }
 
+    for goal in goals:
+        g = goal.lower().replace(" ", "_")
+        if "retirement" in g: g = "retirement_planning"
+        if "home" in g: g = "home_purchase"
+        if "education" in g: g = "education_funding"
+        if "wealth" in g: g = "wealth_building"
+        if "emergency" in g: g = "emergency_fund"
+        
+        if g in goal_weights:
+            for k in allocation:
+                allocation[k] += goal_weights[g][k]
 
-def get_analysis_and_graph_data_from_nova(profile: UserProfile, historical_data: str):
-    try:
-        bedrock_client = boto3.client(
-            service_name="bedrock-runtime",
-            region_name=os.getenv("AWS_REGION_NAME")
-        )
-        prompt = f"""
-        You are an expert financial analyst for an application named PolyFox. Your task is to analyze a client's profile and recent historical market data to generate a personalized financial analysis.
+    if goals:
+        for k in allocation:
+            allocation[k] /= len(goals)
 
-        Your response MUST be a single, valid JSON object containing exactly four keys: "opportunity", "risk_assessment", "suggested_action", and "graph_data".
-        - The "graph_data" key must be a JSON object itself, with two keys: "title" and "points".
+    for k in allocation:
+        allocation[k] *= age_factor * risk_factor
 
-        Client Profile:
-        - Age: {profile.age}
-        - Annual Income: {profile.income} INR
-        - Financial Goals: "{profile.goals}"
-        - Current Investments: "{profile.current_investments}"
+    total = sum(allocation.values())
+    if total == 0: return {key: 0 for key in allocation}
+    
+    for k in allocation:
+        allocation[k] = round(allocation[k] / total * 100, 1)
+    return allocation
 
-        Historical Market Data:
-        {historical_data}
-        """
-        request_body = {
-            "messages": [{"role": "user", "content": [{"text": prompt}]}],
-            "inferenceConfig": {"maxTokens": 2048, "temperature": 0.5}
-        }
-        response = bedrock_client.invoke_model(modelId='amazon.nova-pro-v1:0', body=json.dumps(request_body))
-        result = json.loads(response['body'].read())
-        reply_text = result.get('content', [{}])[0].get('text', '{}')
-        return json.loads(reply_text)
-    except Exception as e:
-        print(f"Error invoking AWS Nova Pro model: {e}")
-        raise HTTPException(status_code=500, detail=f"AI model invocation failed: {e}")
+def plot_risk_profile_base64(allocation):
+    import numpy as np
+    categories, values = list(allocation.keys()), list(allocation.values())
+    num_vars = len(categories)
+    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist() + [0]
+    values += values[:1]
 
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw=dict(polar=True))
+    ax.plot(angles, values, color='blue', linewidth=2)
+    ax.fill(angles, values, color='blue', alpha=0.25)
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(categories)
+    ax.set_ylim(0, max(values) + 10)
+    ax.set_title("Risk Profile Visualization", size=15, weight='bold', y=1.1)
 
-def plot_analysis_graph(graph_data: dict):
-    try:
-        title, points = graph_data.get('title', 'Financial Projection'), graph_data.get('points', [])
-        if not points: return None
-        df = pd.DataFrame(points)
-        plt.style.use('seaborn-v0_8-whitegrid')
-        fig, ax = plt.subplots(figsize=(10, 5), dpi=100)
-        ax.plot(df['month'], df['value'], marker='o', linestyle='-', color='#1B365D')
-        ax.set_title(title, fontsize=16, weight='bold', color='#1A202C')
-        ax.set_ylabel("Projected Value (INR)", fontsize=12, color='#4A5568')
-        ax.tick_params(axis='x', rotation=45)
-        for index, row in df.iterrows():
-            ax.text(row['month'], row['value'] + (df['value'].max() * 0.02), f"₹{row['value']:,}", ha='center', size=9)
-        plt.tight_layout()
-        buf = io.BytesIO()
-        plt.savefig(buf, format='png', transparent=True)
-        buf.seek(0)
-        image_base64 = base64.b64encode(buf.read()).decode('utf-8')
-        plt.close(fig)
-        return f"data:image/png;base64,{image_base64}"
-    except Exception as e:
-        print(f"Error plotting graph: {e}")
-        return None
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', transparent=True, bbox_inches='tight')
+    plt.close(fig)
+    return f"data:image/png;base64,{base64.b64encode(buf.getvalue()).decode('utf-8')}"
 
 # --- API ENDPOINTS ---
 @app.get("/")
 def read_root():
-    return {"status": "ok", "message": "PolyFox AI Financial Advisor backend is running."}
+    return {"status": "ok", "message": "WealthWise AI Backend is running."}
 
 @app.post("/api/analyze")
-def analyze_profile(profile: UserProfile, db: Session = Depends(get_db)):
-    """
-    Orchestrates data retrieval, AI analysis, graph generation, AND SAVES TO DATABASE.
-    """
-    api_key = os.getenv("FINANCIAL_DATA_API_KEY")
-    historical_data = get_historical_market_data(api_key)
-    ai_analysis = get_analysis_and_graph_data_from_nova(profile, historical_data)
-    graph_b64 = plot_analysis_graph(ai_analysis.get("graph_data", {}))
+def analyze_profile(profile: UserProfile):
+    try:
+        risk_allocation = calculate_allocation(**profile.dict())
+        graph_b64 = plot_risk_profile_base64(risk_allocation)
 
-    # --- NEW: SAVE THE REQUEST AND RESPONSE TO THE DATABASE ---
-    db_request = AnalysisRequest(
-        age=profile.age,
-        income=profile.income,
-        goals=profile.goals,
-        current_investments=profile.current_investments,
-        opportunity=ai_analysis.get("opportunity"),
-        risk_assessment=ai_analysis.get("risk_assessment"),
-        suggested_action=ai_analysis.get("suggested_action"),
-        graph_b64=graph_b64
-    )
-    db.add(db_request)
-    db.commit()
-    
-    full_response = {
-        "summary": f"Personalized analysis for a {profile.age}-year-old.",
-        **ai_analysis,
-        "graph": graph_b64
-    }
-    
-    return {"status": "success", "insight": full_response}
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute(
+            """
+            INSERT INTO user_profiles (age, income, current_savings, investment_experience, monthly_budget, goals, investment_timeline, risk_tolerance, risk_allocation)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (profile.age, profile.income, profile.current_savings, profile.investment_experience,
+             profile.monthly_budget, profile.goals, profile.investment_timeline, profile.risk_tolerance,
+             json.dumps(risk_allocation))
+        )
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return {
+            "status": "success",
+            "insight": {
+                "summary": f"Personalized analysis for a {profile.age}-year-old with a '{profile.risk_tolerance}' risk tolerance.",
+                "risk_allocation": risk_allocation,
+                "graph": graph_b64
+            }
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
