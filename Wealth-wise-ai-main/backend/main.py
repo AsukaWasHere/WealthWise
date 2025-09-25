@@ -71,7 +71,7 @@ class UserProfile(BaseModel):
 
 # --- DATA LAYER & AI SERVICES ---
 def get_historical_market_data(api_key: str):
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey={api_key if api_key else 'demo'}"
+    url = f"[https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey=](https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey=){api_key if api_key else 'demo'}"
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -177,16 +177,3 @@ def analyze_profile(profile: UserProfile, db: Session = Depends(get_db)):
     }
     
     return {"status": "success", "insight": full_response}
-```
-
-### **Next Steps**
-
-1.  **Replace the code** in your `backend/main.py` file with the complete, corrected code above.
-2.  **Save the file.**
-3.  **Commit and push** this change to your GitHub repository.
-    ```bash
-    git add backend/main.py
-    git commit -m "FIX: Remove eof marker from main.py"
-    git push
-    
-
