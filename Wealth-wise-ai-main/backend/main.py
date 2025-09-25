@@ -56,7 +56,7 @@ def get_db():
 # --- CORS MIDDLEWARE ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"], # In production, restrict this to your Vercel URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -70,7 +70,6 @@ class UserProfile(BaseModel):
     current_investments: str
 
 # --- DATA LAYER & AI SERVICES ---
-
 def get_historical_market_data(api_key: str):
     url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey={api_key if api_key else 'demo'}"
     try:
@@ -178,20 +177,16 @@ def analyze_profile(profile: UserProfile, db: Session = Depends(get_db)):
     }
     
     return {"status": "success", "insight": full_response}
-```eof
+```
 
-#### **Step 2: Check Your Render Environment Variables**
-To fix the `matplotlib` warning permanently, make sure you have this environment variable set in your Render dashboard under the **"Environment"** tab.
+### **Next Steps**
 
-* **Key:** `MPLCONFIGDIR`
-* **Value:** `/var/data/matplotlib`
-
-#### **Step 3: Push to GitHub and Redeploy**
-1.  Save the corrected `main.py` file.
-2.  Commit and push the changes to your GitHub repository.
+1.  **Replace the code** in your `backend/main.py` file with the complete, corrected code above.
+2.  **Save the file.**
+3.  **Commit and push** this change to your GitHub repository.
     ```bash
     git add backend/main.py
-    git commit -m "FIX: Add missing os import and correct logic"
+    git commit -m "FIX: Remove eof marker from main.py"
     git push
-    ```
-3.  Render will automatically start a new deployment. This time, the `NameError` will be gone, `matplotlib` will have a place to write its cache, and your application should deploy successfully.`
+    
+
