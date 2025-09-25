@@ -1,0 +1,2 @@
+# WealthWise
+Wealth Wise AI
