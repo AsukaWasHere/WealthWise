@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Financial Advisor - WealthWise AI</title>
+    <meta name="description" content="Get personalized investment recommendations powered by AI. Complete your financial assessment and receive institutional-grade insights tailored to your goals." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fwealthwise6107back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L20 10H28L22 16L24 24L16 20L8 24L10 16L4 10H12L16 2Z"/>
+                            <circle cx="16" cy="16" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-primary">WealthWise AI</h1>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="ai_financial_advisor.html" class="text-primary font-semibold px-3 py-2 rounded-md text-sm">AI Advisor</a>
+                        <a href="market_analysis_dashboard.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Market Analysis</a>
+                        <a href="financial_planning_center.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Planning Center</a>
+                        <a href="user_dashboard.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Dashboard</a>
+                        <a href="security_trust.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Security</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="user_dashboard.html" class="btn-primary">View Dashboard</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary p-2" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-border">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="homepage.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Home</a>
+                <a href="ai_financial_advisor.html" class="text-primary font-semibold block px-3 py-2 rounded-md text-base">AI Advisor</a>
+                <a href="market_analysis_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Market Analysis</a>
+                <a href="financial_planning_center.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Planning Center</a>
+                <a href="user_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Dashboard</a>
+                <a href="security_trust.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Security</a>
+                <a href="user_dashboard.html" class="btn-primary w-full text-center mt-4">View Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 via-white to-accent-50 py-16">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-accent-50 px-4 py-2 rounded-full border border-accent-200">
+                    <svg class="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-accent font-medium text-sm">AI-Powered Financial Advisory</span>
+                </div>
+                
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight max-w-4xl mx-auto">
+                    Get <span class="text-gradient">Personalized Investment</span> Recommendations
+                </h1>
+                
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                    Complete your financial assessment and receive institutional-grade insights tailored to your unique goals, risk tolerance, and investment timeline.
+                </p>
+
+                <!-- Progress Indicator -->
+                <div class="max-w-md mx-auto mt-8">
+                    <div class="flex items-center justify-between text-sm text-text-secondary mb-2">
+                        <span>Assessment Progress</span>
+                        <span id="progress-text">0% Complete</span>
+                    </div>
+                    <div class="w-full bg-border rounded-full h-2">
+                        <div id="progress-bar" class="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Wizard -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Step Navigation -->
+            <div class="flex items-center justify-center mb-12">
+                <div class="flex items-center space-x-4">
+                    <div class="step-indicator active" data-step="1">
+                        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-semibold">1</div>
+                        <span class="text-sm font-medium mt-2">Profile</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-border"></div>
+                    <div class="step-indicator" data-step="2">
+                        <div class="w-10 h-10 rounded-full bg-border text-text-secondary flex items-center justify-center font-semibold">2</div>
+                        <span class="text-sm font-medium mt-2 text-text-secondary">Goals</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-border"></div>
+                    <div class="step-indicator" data-step="3">
+                        <div class="w-10 h-10 rounded-full bg-border text-text-secondary flex items-center justify-center font-semibold">3</div>
+                        <span class="text-sm font-medium mt-2 text-text-secondary">Risk</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-border"></div>
+                    <div class="step-indicator" data-step="4">
+                        <div class="w-10 h-10 rounded-full bg-border text-text-secondary flex items-center justify-center font-semibold">4</div>
+                        <span class="text-sm font-medium mt-2 text-text-secondary">Portfolio</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 1: Financial Profile -->
+            <div id="step-1" class="assessment-step active">
+                <div class="card max-w-2xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl font-bold mb-4">Tell Us About Your Financial Situation</h2>
+                        <p class="text-text-secondary">This information helps us provide personalized recommendations tailored to your unique circumstances.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Age Range</label>
+                                <select class="input-field" id="age-range">
+                                    <option value>Select your age range</option>
+                                    <option value="18-25">18-25</option>
+                                    <option value="26-35">26-35</option>
+                                    <option value="36-45">36-45</option>
+                                    <option value="46-55">46-55</option>
+                                    <option value="56-65">56-65</option>
+                                    <option value="65+">65+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Annual Income</label>
+                                <select class="input-field" id="annual-income">
+                                    <option value>Select income range</option>
+                                    <option value="under-50k">Under $50,000</option>
+                                    <option value="50k-75k">$50,000 - $75,000</option>
+                                    <option value="75k-100k">$75,000 - $100,000</option>
+                                    <option value="100k-150k">$100,000 - $150,000</option>
+                                    <option value="150k-250k">$150,000 - $250,000</option>
+                                    <option value="250k+">$250,000+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Current Savings</label>
+                                <select class="input-field" id="current-savings">
+                                    <option value>Select savings amount</option>
+                                    <option value="under-10k">Under $10,000</option>
+                                    <option value="10k-25k">$10,000 - $25,000</option>
+                                    <option value="25k-50k">$25,000 - $50,000</option>
+                                    <option value="50k-100k">$50,000 - $100,000</option>
+                                    <option value="100k-250k">$100,000 - $250,000</option>
+                                    <option value="250k+">$250,000+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Investment Experience</label>
+                                <select class="input-field" id="investment-experience">
+                                    <option value>Select experience level</option>
+                                    <option value="beginner">Beginner (0-2 years)</option>
+                                    <option value="intermediate">Intermediate (2-5 years)</option>
+                                    <option value="advanced">Advanced (5+ years)</option>
+                                    <option value="expert">Expert (10+ years)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Monthly Investment Budget</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary">$</span>
+                                <input type="number" class="input-field pl-8" id="monthly-budget" placeholder="500" min="0" />
+                            </div>
+                            <p class="text-xs text-text-secondary mt-1">Amount you can comfortably invest each month</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end mt-8">
+                        <button onclick="nextStep()" class="btn-primary" id="step-1-next" disabled>
+                            Continue to Goals
+                            <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Investment Goals -->
+            <div id="step-2" class="assessment-step hidden">
+                <div class="card max-w-2xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl font-bold mb-4">What Are Your Investment Goals?</h2>
+                        <p class="text-text-secondary">Select your primary financial objectives to help us create a personalized strategy.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="goal-option" data-goal="retirement">
+                            <div class="flex items-center space-x-4 p-4 border border-border rounded-lg cursor-pointer hover:border-primary-300 transition-colors">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Retirement Planning</h3>
+                                    <p class="text-sm text-text-secondary">Build wealth for your golden years</p>
+                                </div>
+                                <div class="goal-checkbox">
+                                    <svg class="h-5 w-5 text-primary hidden" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="goal-option" data-goal="home">
+                            <div class="flex items-center space-x-4 p-4 border border-border rounded-lg cursor-pointer hover:border-primary-300 transition-colors">
+                                <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center">
+                                    <svg class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Home Purchase</h3>
+                                    <p class="text-sm text-text-secondary">Save for a down payment</p>
+                                </div>
+                                <div class="goal-checkbox">
+                                    <svg class="h-5 w-5 text-primary hidden" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="goal-option" data-goal="education">
+                            <div class="flex items-center space-x-4 p-4 border border-border rounded-lg cursor-pointer hover:border-primary-300 transition-colors">
+                                <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center">
+                                    <svg class="h-6 w-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Education Funding</h3>
+                                    <p class="text-sm text-text-secondary">Save for children's education</p>
+                                </div>
+                                <div class="goal-checkbox">
+                                    <svg class="h-5 w-5 text-primary hidden" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="goal-option" data-goal="wealth">
+                            <div class="flex items-center space-x-4 p-4 border border-border rounded-lg cursor-pointer hover:border-primary-300 transition-colors">
+                                <div class="w-12 h-12 bg-success-100 rounded-full flex items-center justify-center">
+                                    <svg class="h-6 w-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Wealth Building</h3>
+                                    <p class="text-sm text-text-secondary">Long-term wealth accumulation</p>
+                                </div>
+                                <div class="goal-checkbox">
+                                    <svg class="h-5 w-5 text-primary hidden" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="goal-option" data-goal="emergency">
+                            <div class="flex items-center space-x-4 p-4 border border-border rounded-lg cursor-pointer hover:border-primary-300 transition-colors">
+                                <div class="w-12 h-12 bg-warning-100 rounded-full flex items-center justify-center">
+                                    <svg class="h-6 w-6 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Emergency Fund</h3>
+                                    <p class="text-sm text-text-secondary">Build financial security</p>
+                                </div>
+                                <div class="goal-checkbox">
+                                    <svg class="h-5 w-5 text-primary hidden" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-2 mt-6">Investment Timeline</label>
+                        <select class="input-field" id="investment-timeline">
+                            <option value>Select your timeline</option>
+                            <option value="short">Short-term (1-3 years)</option>
+                            <option value="medium">Medium-term (3-7 years)</option>
+                            <option value="long">Long-term (7+ years)</option>
+                        </select>
+                    </div>
+
+                    <div class="flex justify-between mt-8">
+                        <button onclick="prevStep()" class="btn-secondary">
+                            <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button onclick="nextStep()" class="btn-primary" id="step-2-next" disabled>
+                            Continue to Risk Assessment
+                            <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Risk Assessment -->
+            <div id="step-3" class="assessment-step hidden">
+                <div class="card max-w-2xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl font-bold mb-4">Risk Tolerance Assessment</h2>
+                        <p class="text-text-secondary">Understanding your comfort level with investment risk helps us recommend the right portfolio mix.</p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- Risk Tolerance Slider -->
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-4">Risk Tolerance Level</label>
+                            <div class="relative">
+                                <input type="range" min="1" max="5" value="3" class="w-full h-2 bg-border rounded-lg appearance-none cursor-pointer" id="risk-slider" />
+                                <div class="flex justify-between text-xs text-text-secondary mt-2">
+                                    <span>Conservative</span>
+                                    <span>Moderate Conservative</span>
+                                    <span>Moderate</span>
+                                    <span>Moderate Aggressive</span>
+                                    <span>Aggressive</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-surface rounded-lg">
+                                <div id="risk-description" class="text-sm">
+                                    <strong>Moderate Risk:</strong> Balanced approach with mix of growth and stability. Expect moderate volatility with potential for steady returns.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Risk Scenario Questions -->
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="font-semibold mb-3">If your portfolio lost 20% in a market downturn, you would:</h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="market-reaction" value="sell" class="text-primary" />
+                                        <span class="text-sm">Sell immediately to prevent further losses</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="market-reaction" value="wait" class="text-primary" />
+                                        <span class="text-sm">Wait and see what happens</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="market-reaction" value="buy" class="text-primary" />
+                                        <span class="text-sm">Buy more at the lower prices</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold mb-3">Your primary concern when investing is:</h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="primary-concern" value="preservation" class="text-primary" />
+                                        <span class="text-sm">Preserving my capital</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="primary-concern" value="balance" class="text-primary" />
+                                        <span class="text-sm">Balancing growth with stability</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 cursor-pointer">
+                                        <input type="radio" name="primary-concern" value="growth" class="text-primary" />
+                                        <span class="text-sm">Maximizing long-term growth</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Visual Risk Representation -->
+                        <div class="bg-surface p-6 rounded-lg">
+                            <h3 class="font-semibold mb-4">Your Risk Profile Visualization</h3>
+                            <div class="flex items-end space-x-2 h-24">
+                                <div class="risk-bar bg-success" style="height: 30%"></div>
+                                <div class="risk-bar bg-accent" style="height: 50%"></div>
+                                <div class="risk-bar bg-primary" style="height: 70%"></div>
+                                <div class="risk-bar bg-warning" style="height: 40%"></div>
+                                <div class="risk-bar bg-error" style="height: 20%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-text-secondary mt-2">
+                                <span>Bonds</span>
+                                <span>REITs</span>
+                                <span>Stocks</span>
+                                <span>Growth</span>
+                                <span>Crypto</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between mt-8">
+                        <button onclick="prevStep()" class="btn-secondary">
+                            <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Back
+                        </button>
+                        <button onclick="nextStep()" class="btn-primary" id="step-3-next">
+                            Generate Portfolio
+                            <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Portfolio Recommendations -->
+            <div id="step-4" class="assessment-step hidden">
+                <div class="space-y-8">
+                    <!-- AI Analysis Results -->
+                    <div class="text-center">
+                        <div class="inline-flex items-center space-x-2 bg-success-50 px-4 py-2 rounded-full border border-success-200 mb-4">
+                            <svg class="h-5 w-5 text-success animate-spin" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                            </svg>
+                            <span class="text-success font-medium text-sm">AI Analysis Complete</span>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-4">Your Personalized Investment Portfolio</h2>
+                        <p class="text-text-secondary max-w-2xl mx-auto">Based on your profile, our AI has created a customized portfolio designed to meet your goals while matching your risk tolerance.</p>
+                    </div>
+
+                    <!-- Portfolio Overview Cards -->
+                    <div class="grid lg:grid-cols-3 gap-6">
+                        <!-- Portfolio Allocation -->
+                        <div class="lg:col-span-2">
+                            <div class="card">
+                                <h3 class="text-xl font-semibold mb-6">Recommended Asset Allocation</h3>
+                                
+                                <!-- Interactive Pie Chart Representation -->
+                                <div class="relative mb-6">
+                                    <div class="w-64 h-64 mx-auto relative">
+                                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                            <!-- Stocks (40%) -->
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#1B365D" stroke-width="20" stroke-dasharray="40 60" stroke-dashoffset="0" class="transition-all duration-500"/>
+                                            <!-- Bonds (30%) -->
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#00B4A6" stroke-width="20" stroke-dasharray="30 70" stroke-dashoffset="-40" class="transition-all duration-500"/>
+                                            <!-- REITs (20%) -->
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#2E5984" stroke-width="20" stroke-dasharray="20 80" stroke-dashoffset="-70" class="transition-all duration-500"/>
+                                            <!-- Cash (10%) -->
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#38A169" stroke-width="20" stroke-dasharray="10 90" stroke-dashoffset="-90" class="transition-all duration-500"/>
+                                        </svg>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <div class="text-2xl font-bold text-primary">$500</div>
+                                                <div class="text-sm text-text-secondary">Monthly</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Allocation Details -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-4 h-4 bg-primary rounded"></div>
+                                        <div>
+                                            <div class="font-semibold">Stocks (40%)</div>
+                                            <div class="text-sm text-text-secondary">$200/month</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-4 h-4 bg-accent rounded"></div>
+                                        <div>
+                                            <div class="font-semibold">Bonds (30%)</div>
+                                            <div class="text-sm text-text-secondary">$150/month</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-4 h-4 bg-secondary rounded"></div>
+                                        <div>
+                                            <div class="font-semibold">REITs (20%)</div>
+                                            <div class="text-sm text-text-secondary">$100/month</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-4 h-4 bg-success rounded"></div>
+                                        <div>
+                                            <div class="font-semibold">Cash (10%)</div>
+                                            <div class="text-sm text-text-secondary">$50/month</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Drag and Drop Adjustment -->
+                                <div class="mt-6 p-4 bg-surface rounded-lg">
+                                    <h4 class="font-semibold mb-3">Adjust Your Allocation</h4>
+                                    <p class="text-sm text-text-secondary mb-4">Drag the sliders to customize your portfolio allocation</p>
+                                    
+                                    <div class="space-y-4">
+                                        <div class="allocation-slider">
+                                            <div class="flex justify-between items-center mb-2">
+                                                <span class="text-sm font-medium">Stocks</span>
+                                                <span class="text-sm text-primary font-semibold" id="stocks-percent">40%</span>
+                                            </div>
+                                            <input type="range" min="0" max="100" value="40" class="w-full allocation-range" id="stocks-slider" />
+                                        </div>
+                                        
+                                        <div class="allocation-slider">
+                                            <div class="flex justify-between items-center mb-2">
+                                                <span class="text-sm font-medium">Bonds</span>
+                                                <span class="text-sm text-accent font-semibold" id="bonds-percent">30%</span>
+                                            </div>
+                                            <input type="range" min="0" max="100" value="30" class="w-full allocation-range" id="bonds-slider" />
+                                        </div>
+                                        
+                                        <div class="allocation-slider">
+                                            <div class="flex justify-between items-center mb-2">
+                                                <span class="text-sm font-medium">REITs</span>
+                                                <span class="text-sm text-secondary font-semibold" id="reits-percent">20%</span>
+                                            </div>
+                                            <input type="range" min="0" max="100" value="20" class="w-full allocation-range" id="reits-slider" />
+                                        </div>
+                                        
+                                        <div class="allocation-slider">
+                                            <div class="flex justify-between items-center mb-2">
+                                                <span class="text-sm font-medium">Cash</span>
+                                                <span class="text-sm text-success font-semibold" id="cash-percent">10%</span>
+                                            </div>
+                                            <input type="range" min="0" max="100" value="10" class="w-full allocation-range" id="cash-slider" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Insights -->
+                        <div class="space-y-6">
+                            <!-- Risk Score -->
+                            <div class="card">
+                                <h3 class="font-semibold mb-4">Portfolio Risk Score</h3>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-primary mb-2">6.2</div>
+                                    <div class="text-sm text-text-secondary mb-4">Moderate Risk</div>
+                                    <div class="w-full bg-border rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-success to-warning h-2 rounded-full" style="width: 62%"></div>
+                                    </div>
+                                    <div class="flex justify-between text-xs text-text-secondary mt-2">
+                                        <span>Low</span>
+                                        <span>High</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Expected Returns -->
+                            <div class="card">
+                                <h3 class="font-semibold mb-4">Projected Returns</h3>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between">
+                                        <span class="text-sm text-text-secondary">1 Year</span>
+                                        <span class="font-semibold text-success">+8.2%</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-sm text-text-secondary">5 Years</span>
+                                        <span class="font-semibold text-success">+9.7%</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-sm text-text-secondary">10 Years</span>
+                                        <span class="font-semibold text-success">+10.4%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AI Insights -->
+                            <div class="card bg-gradient-to-br from-primary-50 to-accent-50 border-primary-200">
+                                <div class="flex items-center space-x-2 mb-3">
+                                    <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <h3 class="font-semibold text-primary">AI Recommendation</h3>
+                                </div>
+                                <p class="text-sm text-text-secondary">Based on your moderate risk tolerance and long-term goals, this balanced portfolio offers steady growth potential while maintaining stability during market volatility.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specific Investment Recommendations -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-6">Recommended Investments</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="investment-card p-4 border border-border rounded-lg hover:border-primary-300 transition-colors">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                        <span class="text-primary font-bold text-sm">VTI</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-sm">Vanguard Total Stock</div>
+                                        <div class="text-xs text-text-secondary">Stock ETF</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-text-secondary">Allocation</span>
+                                    <span class="font-semibold text-primary">25%</span>
+                                </div>
+                            </div>
+
+                            <div class="investment-card p-4 border border-border rounded-lg hover:border-primary-300 transition-colors">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center">
+                                        <span class="text-accent font-bold text-sm">BND</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-sm">Vanguard Total Bond</div>
+                                        <div class="text-xs text-text-secondary">Bond ETF</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-text-secondary">Allocation</span>
+                                    <span class="font-semibold text-accent">30%</span>
+                                </div>
+                            </div>
+
+                            <div class="investment-card p-4 border border-border rounded-lg hover:border-primary-300 transition-colors">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center">
+                                        <span class="text-secondary font-bold text-sm">VNQ</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-sm">Vanguard REIT</div>
+                                        <div class="text-xs text-text-secondary">Real Estate ETF</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-text-secondary">Allocation</span>
+                                    <span class="font-semibold text-secondary">20%</span>
+                                </div>
+                            </div>
+
+                            <div class="investment-card p-4 border border-border rounded-lg hover:border-primary-300 transition-colors">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-success-100 rounded-full flex items-center justify-center">
+                                        <span class="text-success font-bold text-sm">VMOT</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-sm">Vanguard Ultra-Short</div>
+                                        <div class="text-xs text-text-secondary">Money Market</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-text-secondary">Allocation</span>
+                                    <span class="font-semibold text-success">10%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="prevStep()" class="btn-secondary">
+                            <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            Modify Assessment
+                        </button>
+                        <a href="user_dashboard.html" class="btn-primary text-center">
+                            Accept Portfolio & Continue
+                            <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="financial_planning_center.html" class="btn-accent text-center">
+                            Explore Planning Tools
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunities Alert -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Current Market Opportunities</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto">Our AI continuously monitors the market to identify opportunities that align with your investment profile.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Opportunity 1 -->
+                <div class="card border-l-4 border-l-success">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-5 w-5 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold text-success">Buy Signal</span>
+                        </div>
+                        <span class="text-xs bg-success-50 text-success px-2 py-1 rounded-full">High Confidence</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Clean Energy ETF</h3>
+                    <p class="text-sm text-text-secondary mb-4">Strong momentum in renewable energy sector with 15% upside potential based on recent policy developments.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-text-secondary">Expected Return</span>
+                        <span class="font-semibold text-success">+15.2%</span>
+                    </div>
+                </div>
+
+                <!-- Opportunity 2 -->
+                <div class="card border-l-4 border-l-warning">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-5 w-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-semibold text-warning">Watch</span>
+                        </div>
+                        <span class="text-xs bg-warning-50 text-warning px-2 py-1 rounded-full">Medium Risk</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Tech Growth Stocks</h3>
+                    <p class="text-sm text-text-secondary mb-4">Monitoring for entry point as valuations approach attractive levels after recent correction.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-text-secondary">Target Entry</span>
+                        <span class="font-semibold text-warning">-8.5%</span>
+                    </div>
+                </div>
+
+                <!-- Opportunity 3 -->
+                <div class="card border-l-4 border-l-primary">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="font-semibold text-primary">Rebalance</span>
+                        </div>
+                        <span class="text-xs bg-primary-50 text-primary px-2 py-1 rounded-full">Action Needed</span>
+                    </div>
+                    <h3 class="font-semibold mb-2">Portfolio Rebalancing</h3>
+                    <p class="text-sm text-text-secondary mb-4">Your stock allocation has drifted above target. Consider rebalancing to maintain optimal risk profile.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-text-secondary">Current vs Target</span>
+                        <span class="font-semibold text-primary">45% vs 40%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="market_analysis_dashboard.html" class="btn-secondary">
+                    View Detailed Market Analysis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <svg class="h-8 w-8 text-accent" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L20 10H28L22 16L24 24L16 20L8 24L10 16L4 10H12L16 2Z"/>
+                            <circle cx="16" cy="16" r="3" fill="currentColor"/>
+                        </svg>
+                        <span class="text-xl font-bold">WealthWise AI</span>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Democratizing sophisticated investment guidance through AI-powered financial advisory services.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Platform</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="ai_financial_advisor.html" class="text-primary-200 hover:text-white transition-colors">AI Financial Advisor</a></li>
+                        <li><a href="market_analysis_dashboard.html" class="text-primary-200 hover:text-white transition-colors">Market Analysis</a></li>
+                        <li><a href="financial_planning_center.html" class="text-primary-200 hover:text-white transition-colors">Planning Center</a></li>
+                        <li><a href="user_dashboard.html" class="text-primary-200 hover:text-white transition-colors">Dashboard</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Learning Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Investment Guides</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Market Research</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Financial Calculators</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="security_trust.html" class="text-primary-200 hover:text-white transition-colors">Security & Privacy</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 WealthWise AI. All Rights Reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-primary-200 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="text-primary-200 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    <a href="javascript:void(0)" class="text-primary-200 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+        let selectedGoals = [];
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Step navigation functions
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                document.getElementById(`step-${currentStep}`).classList.add('hidden');
+                document.getElementById(`step-${currentStep}`).classList.remove('active');
+                
+                currentStep++;
+                
+                document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+                document.getElementById(`step-${currentStep}`).classList.add('active');
+                
+                updateStepIndicators();
+                updateProgress();
+                
+                // Scroll to top of section
+                document.querySelector('.assessment-step.active').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                document.getElementById(`step-${currentStep}`).classList.add('hidden');
+                document.getElementById(`step-${currentStep}`).classList.remove('active');
+                
+                currentStep--;
+                
+                document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+                document.getElementById(`step-${currentStep}`).classList.add('active');
+                
+                updateStepIndicators();
+                updateProgress();
+                
+                // Scroll to top of section
+                document.querySelector('.assessment-step.active').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function updateStepIndicators() {
+            document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
+                const stepNumber = index + 1;
+                const circle = indicator.querySelector('div');
+                const text = indicator.querySelector('span');
+                
+                if (stepNumber <= currentStep) {
+                    circle.classList.remove('bg-border', 'text-text-secondary');
+                    circle.classList.add('bg-primary', 'text-white');
+                    text.classList.remove('text-text-secondary');
+                    text.classList.add('text-primary');
+                    indicator.classList.add('active');
+                } else {
+                    circle.classList.remove('bg-primary', 'text-white');
+                    circle.classList.add('bg-border', 'text-text-secondary');
+                    text.classList.remove('text-primary');
+                    text.classList.add('text-text-secondary');
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            document.getElementById('progress-text').textContent = `${Math.round(progress)}% Complete`;
+        }
+
+        // Form validation for Step 1
+        function validateStep1() {
+            const ageRange = document.getElementById('age-range').value;
+            const annualIncome = document.getElementById('annual-income').value;
+            const currentSavings = document.getElementById('current-savings').value;
+            const investmentExperience = document.getElementById('investment-experience').value;
+            const monthlyBudget = document.getElementById('monthly-budget').value;
+
+            const isValid = ageRange && annualIncome && currentSavings && investmentExperience && monthlyBudget;
+            document.getElementById('step-1-next').disabled = !isValid;
+            
+            if (isValid) {
+                document.getElementById('step-1-next').classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                document.getElementById('step-1-next').classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // Form validation for Step 2
+        function validateStep2() {
+            const timeline = document.getElementById('investment-timeline').value;
+            const hasGoals = selectedGoals.length > 0;
+            
+            const isValid = timeline && hasGoals;
+            document.getElementById('step-2-next').disabled = !isValid;
+            
+            if (isValid) {
+                document.getElementById('step-2-next').classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                document.getElementById('step-2-next').classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // Goal selection handling
+        document.querySelectorAll('.goal-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const goal = this.dataset.goal;
+                const checkbox = this.querySelector('.goal-checkbox svg');
+                
+                if (selectedGoals.includes(goal)) {
+                    selectedGoals = selectedGoals.filter(g => g !== goal);
+                    this.classList.remove('border-primary-300', 'bg-primary-50');
+                    this.classList.add('border-border');
+                    checkbox.classList.add('hidden');
+                } else {
+                    selectedGoals.push(goal);
+                    this.classList.remove('border-border');
+                    this.classList.add('border-primary-300', 'bg-primary-50');
+                    checkbox.classList.remove('hidden');
+                }
+                
+                validateStep2();
+            });
+        });
+
+        // Risk slider handling
+        const riskSlider = document.getElementById('risk-slider');
+        const riskDescription = document.getElementById('risk-description');
+        
+        const riskDescriptions = {
+            1: '<strong>Conservative:</strong> Focus on capital preservation with minimal risk. Expect lower but stable returns.',
+            2: '<strong>Moderate Conservative:</strong> Slight emphasis on growth with low risk tolerance. Balanced approach favoring stability.',
+            3: '<strong>Moderate:</strong> Balanced approach with mix of growth and stability. Expect moderate volatility with potential for steady returns.',
+            4: '<strong>Moderate Aggressive:</strong> Growth-focused with higher risk tolerance. Potential for higher returns with increased volatility.',
+            5: '<strong>Aggressive:</strong> Maximum growth potential with high risk tolerance. Expect significant volatility but highest return potential.'
+        };
+
+        riskSlider.addEventListener('input', function() {
+            const value = this.value;
+            riskDescription.innerHTML = riskDescriptions[value];
+            
+            // Update risk visualization bars
+            const bars = document.querySelectorAll('.risk-bar');
+            bars.forEach((bar, index) => {
+                const height = Math.max(20, (value * 20) + (Math.random() * 30));
+                bar.style.height = `${height}%`;
+            });
+        });
+
+        // Allocation sliders handling
+        const allocationSliders = document.querySelectorAll('.allocation-range');
+        
+        allocationSliders.forEach(slider => {
+            slider.addEventListener('input', function() {
+                const id = this.id;
+                const value = this.value;
+                const percentElement = document.getElementById(id.replace('-slider', '-percent'));
+                percentElement.textContent = `${value}%`;
+                
+                // Update pie chart (simplified representation)
+                updateAllocationChart();
+            });
+        });
+
+        function updateAllocationChart() {
+            // This would update the SVG pie chart in a real implementation
+            console.log('Updating allocation chart...');
+        }
+
+        // Event listeners for form validation
+        document.getElementById('age-range').addEventListener('change', validateStep1);
+        document.getElementById('annual-income').addEventListener('change', validateStep1);
+        document.getElementById('current-savings').addEventListener('change', validateStep1);
+        document.getElementById('investment-experience').addEventListener('change', validateStep1);
+        document.getElementById('monthly-budget').addEventListener('input', validateStep1);
+        document.getElementById('investment-timeline').addEventListener('change', validateStep2);
+
+        // Initialize
+        updateStepIndicators();
+        updateProgress();
+        validateStep1();
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = event.target.closest('button');
+            
+            if (!menuButton && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation to CTA buttons
+        document.querySelectorAll('.btn-primary, .btn-secondary, .btn-accent').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.href && !this.href.includes('#') && !this.onclick) {
+                    this.style.opacity = '0.8';
+                    const originalText = this.innerHTML;
+                    this.innerHTML = originalText + ' <span class="inline-block animate-spin ml-2">⟳</span>';
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

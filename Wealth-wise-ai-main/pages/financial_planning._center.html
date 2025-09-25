@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financial Planning Center - WealthWise AI</title>
+    <meta name="description" content="Long-term goal setting with adaptive strategies and milestone tracking. Plan for retirement, home purchase, education funding with AI-powered insights." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fwealthwise6107back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L20 10H28L22 16L24 24L16 20L8 24L10 16L4 10H12L16 2Z"/>
+                            <circle cx="16" cy="16" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-primary">WealthWise AI</h1>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="ai_financial_advisor.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">AI Advisor</a>
+                        <a href="market_analysis_dashboard.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Market Analysis</a>
+                        <a href="financial_planning_center.html" class="text-primary font-semibold px-3 py-2 rounded-md text-sm">Planning Center</a>
+                        <a href="user_dashboard.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Dashboard</a>
+                        <a href="security_trust.html" class="text-text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md text-sm">Security</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="ai_financial_advisor.html" class="btn-primary">Get Started</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary p-2" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-border">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="homepage.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Home</a>
+                <a href="ai_financial_advisor.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">AI Advisor</a>
+                <a href="market_analysis_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Market Analysis</a>
+                <a href="financial_planning_center.html" class="text-primary font-semibold block px-3 py-2 rounded-md text-base">Planning Center</a>
+                <a href="user_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Dashboard</a>
+                <a href="security_trust.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Security</a>
+                <a href="ai_financial_advisor.html" class="btn-primary w-full text-center mt-4">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 via-white to-accent-50 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+            <div class="text-center space-y-8">
+                <div class="space-y-4">
+                    <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                        Your <span class="text-gradient">Financial Planning</span> Command Center
+                    </h1>
+                    <p class="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                        Transform your financial dreams into achievable milestones with AI-powered planning tools, adaptive strategies, and personalized roadmaps for every life goal.
+                    </p>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-border">
+                        <div class="text-3xl font-bold text-primary mb-2">$2.4M</div>
+                        <div class="text-sm text-text-secondary">Average retirement goal achieved</div>
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-border">
+                        <div class="text-3xl font-bold text-accent mb-2">87%</div>
+                        <div class="text-sm text-text-secondary">Users reach their milestones</div>
+                    </div>
+                    <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-border">
+                        <div class="text-3xl font-bold text-success mb-2">3.2x</div>
+                        <div class="text-sm text-text-secondary">Faster goal achievement</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToGoalSetup()" class="btn-primary">
+                        Start Planning Your Goals
+                    </button>
+                    <a href="ai_financial_advisor.html" class="btn-secondary text-center">
+                        Get AI Recommendations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goal Categories Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold">Plan for Every Life Milestone</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Whether you're planning for retirement, buying a home, or funding education, our AI-powered tools create personalized strategies for your unique situation.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Retirement Planning -->
+                <div class="card group hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openCalculator('retirement')">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center group-hover:bg-primary-200 transition-colors">
+                            <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Retirement Planning</h3>
+                            <p class="text-sm text-text-secondary">Secure your golden years</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        Calculate how much you need to save for retirement with inflation adjustments, Social Security projections, and Monte Carlo simulations.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-primary">Interactive Calculator</span>
+                        <svg class="h-5 w-5 text-primary group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Home Buying -->
+                <div class="card group hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openCalculator('home')">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center group-hover:bg-accent-200 transition-colors">
+                            <svg class="h-6 w-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Home Buying</h3>
+                            <p class="text-sm text-text-secondary">Your dream home awaits</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        Determine how much house you can afford, calculate down payment needs, and plan your path to homeownership.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-accent">Affordability Calculator</span>
+                        <svg class="h-5 w-5 text-accent group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Education Funding -->
+                <div class="card group hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openCalculator('education')">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center group-hover:bg-secondary-200 transition-colors">
+                            <svg class="h-6 w-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Education Funding</h3>
+                            <p class="text-sm text-text-secondary">Invest in the future</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        Plan for college expenses with 529 plan optimization, education cost projections, and tax-advantaged savings strategies.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-secondary">529 Plan Integration</span>
+                        <svg class="h-5 w-5 text-secondary group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Debt Payoff -->
+                <div class="card group hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openCalculator('debt')">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-warning-100 rounded-xl flex items-center justify-center group-hover:bg-warning-200 transition-colors">
+                            <svg class="h-6 w-6 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Debt Optimization</h3>
+                            <p class="text-sm text-text-secondary">Freedom from debt</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        Create an optimized debt payoff strategy using avalanche or snowball methods to minimize interest and maximize savings.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-warning">Payoff Optimizer</span>
+                        <svg class="h-5 w-5 text-warning group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Emergency Fund -->
+                <div class="card group hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openCalculator('emergency')">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-success-100 rounded-xl flex items-center justify-center group-hover:bg-success-200 transition-colors">
+                            <svg class="h-6 w-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Emergency Fund</h3>
+                            <p class="text-sm text-text-secondary">Financial security</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        Build a robust emergency fund tailored to your lifestyle and expenses, with smart savings strategies and timeline planning.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-success">Security Calculator</span>
+                        <svg class="h-5 w-5 text-success group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Investment Goals -->
+                <div class="card group hover:shadow-xl transition-all duration-300 cursor-pointer" onclick="openCalculator('investment')">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center group-hover:bg-primary-200 transition-colors">
+                            <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Investment Goals</h3>
+                            <p class="text-sm text-text-secondary">Wealth building</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        Set and track investment milestones with Monte Carlo simulations, risk analysis, and adaptive portfolio strategies.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-primary">Scenario Modeling</span>
+                        <svg class="h-5 w-5 text-primary group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goal Setup Section -->
+    <section id="goal-setup" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold">Create Your Financial Roadmap</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Start with one goal or plan multiple objectives. Our AI will create a personalized strategy that adapts as your life changes.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Goal Setup Form -->
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-6">Set Your Financial Goal</h3>
+                    
+                    <form class="space-y-6">
+                        <!-- Goal Type -->
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-3">What's your primary goal?</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" class="goal-option p-4 border-2 border-border rounded-lg text-left hover:border-primary transition-colors" onclick="selectGoal('retirement', this)">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                                            <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium">Retirement</span>
+                                    </div>
+                                </button>
+                                <button type="button" class="goal-option p-4 border-2 border-border rounded-lg text-left hover:border-accent transition-colors" onclick="selectGoal('home', this)">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
+                                            <svg class="h-4 w-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium">Home Buying</span>
+                                    </div>
+                                </button>
+                                <button type="button" class="goal-option p-4 border-2 border-border rounded-lg text-left hover:border-secondary transition-colors" onclick="selectGoal('education', this)">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-secondary-100 rounded-lg flex items-center justify-center">
+                                            <svg class="h-4 w-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium">Education</span>
+                                    </div>
+                                </button>
+                                <button type="button" class="goal-option p-4 border-2 border-border rounded-lg text-left hover:border-success transition-colors" onclick="selectGoal('emergency', this)">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-success-100 rounded-lg flex items-center justify-center">
+                                            <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium">Emergency Fund</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Goal Amount -->
+                        <div>
+                            <label for="goal-amount" class="block text-sm font-medium text-text-primary mb-2">Target Amount</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary">$</span>
+                                <input type="number" id="goal-amount" class="input-field pl-8" placeholder="100,000" value="500000" />
+                            </div>
+                        </div>
+
+                        <!-- Timeline -->
+                        <div>
+                            <label for="timeline" class="block text-sm font-medium text-text-primary mb-2">Timeline (Years)</label>
+                            <input type="range" id="timeline" min="1" max="40" value="25" class="w-full h-2 bg-border rounded-lg appearance-none cursor-pointer slider" />
+                            <div class="flex justify-between text-sm text-text-secondary mt-2">
+                                <span>1 year</span>
+                                <span id="timeline-value" class="font-medium text-primary">25 years</span>
+                                <span>40 years</span>
+                            </div>
+                        </div>
+
+                        <!-- Current Savings -->
+                        <div>
+                            <label for="current-savings" class="block text-sm font-medium text-text-primary mb-2">Current Savings</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary">$</span>
+                                <input type="number" id="current-savings" class="input-field pl-8" placeholder="10,000" value="25000" />
+                            </div>
+                        </div>
+
+                        <!-- Monthly Contribution -->
+                        <div>
+                            <label for="monthly-contribution" class="block text-sm font-medium text-text-primary mb-2">Monthly Contribution</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary">$</span>
+                                <input type="number" id="monthly-contribution" class="input-field pl-8" placeholder="500" value="1200" />
+                            </div>
+                        </div>
+
+                        <!-- Risk Tolerance -->
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-3">Risk Tolerance</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" class="risk-option p-3 border-2 border-border rounded-lg text-center hover:border-success transition-colors" onclick="selectRisk('conservative', this)">
+                                    <div class="text-success font-medium">Conservative</div>
+                                    <div class="text-xs text-text-secondary">3-5% return</div>
+                                </button>
+                                <button type="button" class="risk-option p-3 border-2 border-primary bg-primary-50 rounded-lg text-center" onclick="selectRisk('moderate', this)">
+                                    <div class="text-primary font-medium">Moderate</div>
+                                    <div class="text-xs text-text-secondary">6-8% return</div>
+                                </button>
+                                <button type="button" class="risk-option p-3 border-2 border-border rounded-lg text-center hover:border-warning transition-colors" onclick="selectRisk('aggressive', this)">
+                                    <div class="text-warning font-medium">Aggressive</div>
+                                    <div class="text-xs text-text-secondary">9-12% return</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-primary w-full" onclick="generatePlan()">
+                            Generate My Financial Plan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Goal Visualization -->
+                <div class="space-y-6">
+                    <!-- Timeline Visualization -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4">Your Goal Timeline</h3>
+                        <div class="space-y-4">
+                            <!-- Progress Bar -->
+                            <div class="relative">
+                                <div class="h-2 bg-border rounded-full">
+                                    <div class="h-2 bg-gradient-to-r from-primary to-accent rounded-full" style="width: 12%"></div>
+                                </div>
+                                <div class="flex justify-between text-sm text-text-secondary mt-2">
+                                    <span>Today</span>
+                                    <span>2049 (Goal Date)</span>
+                                </div>
+                            </div>
+
+                            <!-- Milestones -->
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-accent rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between">
+                                            <span class="font-medium">25% Milestone</span>
+                                            <span class="text-text-secondary">2031</span>
+                                        </div>
+                                        <div class="text-sm text-text-secondary">$125,000 saved</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-border rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between">
+                                            <span class="font-medium">50% Milestone</span>
+                                            <span class="text-text-secondary">2037</span>
+                                        </div>
+                                        <div class="text-sm text-text-secondary">$250,000 saved</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-border rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between">
+                                            <span class="font-medium">75% Milestone</span>
+                                            <span class="text-text-secondary">2043</span>
+                                        </div>
+                                        <div class="text-sm text-text-secondary">$375,000 saved</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-border rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between">
+                                            <span class="font-medium">Goal Achievement</span>
+                                            <span class="text-text-secondary">2049</span>
+                                        </div>
+                                        <div class="text-sm text-text-secondary">$500,000 target</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4">Plan Summary</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Monthly Savings Needed</span>
+                                <span class="font-semibold text-primary">$1,200</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Total Contributions</span>
+                                <span class="font-semibold">$385,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Expected Growth</span>
+                                <span class="font-semibold text-success">$115,000</span>
+                            </div>
+                            <div class="border-t border-border pt-4">
+                                <div class="flex justify-between">
+                                    <span class="font-medium">Final Amount</span>
+                                    <span class="font-bold text-xl text-primary">$500,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Insights -->
+                    <div class="card bg-gradient-to-br from-primary-50 to-accent-50 border-primary-200">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <h3 class="font-semibold text-primary">AI Recommendation</h3>
+                        </div>
+                        <p class="text-sm text-text-secondary mb-3">
+                            Based on your profile, consider increasing your contribution by $200/month to reach your goal 3 years earlier and save $15,000 in total contributions.
+                        </p>
+                        <button class="text-sm text-primary font-medium hover:underline">
+                            View Optimization Options →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculators Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold">Advanced Planning Tools</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Dive deeper with our comprehensive suite of financial calculators and scenario modeling tools.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Compound Interest Calculator -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                            <svg class="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold">Compound Interest</h3>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-4">
+                        See how your money grows over time with the power of compound interest.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span>Initial: $10,000</span>
+                            <span>Rate: 7%</span>
+                        </div>
+                        <div class="h-20 bg-gradient-to-r from-accent-100 to-accent-200 rounded flex items-end p-2">
+                            <div class="flex items-end space-x-1 w-full">
+                                <div class="bg-accent w-2 h-4 rounded-t"></div>
+                                <div class="bg-accent w-2 h-6 rounded-t"></div>
+                                <div class="bg-accent w-2 h-8 rounded-t"></div>
+                                <div class="bg-accent w-2 h-10 rounded-t"></div>
+                                <div class="bg-accent w-2 h-12 rounded-t"></div>
+                                <div class="bg-accent w-2 h-14 rounded-t"></div>
+                                <div class="bg-accent w-2 h-16 rounded-t"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-accent">$76,123</div>
+                            <div class="text-xs text-text-secondary">After 30 years</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monte Carlo Simulation -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 001.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold">Monte Carlo</h3>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-4">
+                        Probability-based analysis of your investment outcomes across thousands of scenarios.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span>Success Rate</span>
+                                <span class="font-medium text-success">87%</span>
+                            </div>
+                            <div class="w-full bg-border rounded-full h-2">
+                                <div class="bg-success h-2 rounded-full" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                            <div>
+                                <div class="font-medium text-success">Best Case</div>
+                                <div class="text-text-secondary">$850K</div>
+                            </div>
+                            <div>
+                                <div class="font-medium text-primary">Expected</div>
+                                <div class="text-text-secondary">$500K</div>
+                            </div>
+                            <div>
+                                <div class="font-medium text-warning">Worst Case</div>
+                                <div class="text-text-secondary">$320K</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Assessment -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-warning-100 rounded-lg flex items-center justify-center">
+                            <svg class="h-5 w-5 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold">Risk Assessment</h3>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-4">
+                        Understand your risk tolerance and optimize your investment strategy accordingly.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span>Risk Score</span>
+                                <span class="font-medium text-warning">6/10</span>
+                            </div>
+                            <div class="flex space-x-1">
+                                <div class="flex-1 h-2 bg-success rounded"></div>
+                                <div class="flex-1 h-2 bg-success rounded"></div>
+                                <div class="flex-1 h-2 bg-success rounded"></div>
+                                <div class="flex-1 h-2 bg-warning rounded"></div>
+                                <div class="flex-1 h-2 bg-warning rounded"></div>
+                                <div class="flex-1 h-2 bg-warning rounded"></div>
+                                <div class="flex-1 h-2 bg-border rounded"></div>
+                                <div class="flex-1 h-2 bg-border rounded"></div>
+                                <div class="flex-1 h-2 bg-border rounded"></div>
+                                <div class="flex-1 h-2 bg-border rounded"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-sm font-medium text-warning">Moderate Risk</div>
+                            <div class="text-xs text-text-secondary">Balanced growth approach</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inflation Calculator -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-error-100 rounded-lg flex items-center justify-center">
+                            <svg class="h-5 w-5 text-error" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold">Inflation Impact</h3>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-4">
+                        See how inflation affects your purchasing power and adjust your goals accordingly.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span>Today's $100K</span>
+                            <span>3% inflation</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-error">$55,207</div>
+                            <div class="text-xs text-text-secondary">Purchasing power in 20 years</div>
+                        </div>
+                        <div class="bg-error-50 p-3 rounded-lg">
+                            <div class="text-xs text-error font-medium">Inflation Protection Needed</div>
+                            <div class="text-xs text-text-secondary">Consider inflation-adjusted investments</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tax Optimization -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center">
+                            <svg class="h-5 w-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold">Tax Optimization</h3>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-4">
+                        Maximize your savings with tax-advantaged accounts and strategies.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span>Annual Tax Savings</span>
+                                <span class="font-medium text-success">$3,600</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>401(k) Contribution</span>
+                                <span>$12,000</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>IRA Contribution</span>
+                                <span>$6,000</span>
+                            </div>
+                        </div>
+                        <div class="bg-success-50 p-3 rounded-lg">
+                            <div class="text-xs text-success font-medium">Optimization Opportunity</div>
+                            <div class="text-xs text-text-secondary">Max out tax-advantaged accounts first</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset Allocation -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                            <svg class="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold">Asset Allocation</h3>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-4">
+                        Optimize your portfolio mix based on your age, goals, and risk tolerance.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span>Stocks</span>
+                                <span class="font-medium">70%</span>
+                            </div>
+                            <div class="w-full bg-border rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Bonds</span>
+                                <span class="font-medium">25%</span>
+                            </div>
+                            <div class="w-full bg-border rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Cash</span>
+                                <span class="font-medium">5%</span>
+                            </div>
+                            <div class="w-full bg-border rounded-full h-2">
+                                <div class="bg-success h-2 rounded-full" style="width: 5%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="ai_financial_advisor.html" class="btn-primary">
+                    Get Personalized Recommendations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold">Track Your Progress</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Monitor your financial milestones and celebrate your achievements along the way.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Progress Dashboard -->
+                <div class="card">
+                    <h3 class="text-2xl font-semibold mb-6">Your Financial Journey</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Overall Progress -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">Overall Progress</span>
+                                <span class="text-sm text-text-secondary">$62,500 of $500,000</span>
+                            </div>
+                            <div class="w-full bg-border rounded-full h-3">
+                                <div class="bg-gradient-to-r from-primary to-accent h-3 rounded-full" style="width: 12.5%"></div>
+                            </div>
+                            <div class="text-sm text-text-secondary mt-1">12.5% complete</div>
+                        </div>
+
+                        <!-- Individual Goals -->
+                        <div class="space-y-4">
+                            <div class="border border-border rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                                            <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">Retirement Fund</div>
+                                            <div class="text-sm text-text-secondary">Target: $500,000 by 2049</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="font-semibold text-primary">$45,000</div>
+                                        <div class="text-sm text-success">+$1,200/month</div>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-border rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 9%"></div>
+                                </div>
+                            </div>
+
+                            <div class="border border-border rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-success-100 rounded-lg flex items-center justify-center">
+                                            <svg class="h-4 w-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">Emergency Fund</div>
+                                            <div class="text-sm text-text-secondary">Target: $30,000 by 2026</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="font-semibold text-success">$17,500</div>
+                                        <div class="text-sm text-success">+$500/month</div>
+                                    </div>
+                                </div>
+                                <div class="w-full bg-border rounded-full h-2">
+                                    <div class="bg-success h-2 rounded-full" style="width: 58%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Achievements -->
+                        <div>
+                            <h4 class="font-semibold mb-3">Recent Achievements</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center space-x-3 p-3 bg-success-50 rounded-lg">
+                                    <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center">
+                                        <svg class="h-3 w-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-success">Emergency Fund 50% Complete</div>
+                                        <div class="text-sm text-text-secondary">Achieved on September 15, 2025</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3 p-3 bg-primary-50 rounded-lg">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                        <svg class="h-3 w-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-primary">First $40K Milestone</div>
+                                        <div class="text-sm text-text-secondary">Achieved on August 22, 2025</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adaptive Strategies -->
+                <div class="space-y-6">
+                    <!-- Strategy Adjustments -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4">Adaptive Strategy Recommendations</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-accent pl-4">
+                                <div class="font-medium text-accent">Market Opportunity</div>
+                                <p class="text-sm text-text-secondary mt-1">
+                                    Consider increasing your stock allocation by 5% to take advantage of current market conditions. This could accelerate your goal by 8 months.
+                                </p>
+                                <button class="text-sm text-accent font-medium mt-2 hover:underline">
+                                    Learn More →
+                                </button>
+                            </div>
+                            
+                            <div class="border-l-4 border-warning pl-4">
+                                <div class="font-medium text-warning">Inflation Protection</div>
+                                <p class="text-sm text-text-secondary mt-1">
+                                    With inflation at 3.2%, consider adding TIPS or I-bonds to protect your purchasing power over the long term.
+                                </p>
+                                <button class="text-sm text-warning font-medium mt-2 hover:underline">
+                                    View Options →
+                                </button>
+                            </div>
+                            
+                            <div class="border-l-4 border-success pl-4">
+                                <div class="font-medium text-success">Tax Optimization</div>
+                                <p class="text-sm text-text-secondary mt-1">
+                                    You're eligible for a $500 catch-up contribution. This could save you $150 in taxes this year.
+                                </p>
+                                <button class="text-sm text-success font-medium mt-2 hover:underline">
+                                    Apply Now →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Next Milestones -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4">Upcoming Milestones</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center">
+                                    <span class="text-accent font-bold">1</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-medium">Emergency Fund Complete</div>
+                                    <div class="text-sm text-text-secondary">$12,500 remaining • Est. March 2026</div>
+                                    <div class="w-full bg-border rounded-full h-1 mt-2">
+                                        <div class="bg-accent h-1 rounded-full" style="width: 58%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <span class="text-primary font-bold">2</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-medium">Retirement 25% Milestone</div>
+                                    <div class="text-sm text-text-secondary">$80,000 remaining • Est. December 2031</div>
+                                    <div class="w-full bg-border rounded-full h-1 mt-2">
+                                        <div class="bg-primary h-1 rounded-full" style="width: 9%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Insights -->
+                    <div class="card bg-gradient-to-br from-primary-50 to-accent-50 border-primary-200">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <h3 class="font-semibold text-primary">Performance Insights</h3>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-sm">Ahead of Schedule</span>
+                                <span class="text-sm font-medium text-success">+2.3 months</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm">Annual Return</span>
+                                <span class="text-sm font-medium text-primary">8.4%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm">Risk Score</span>
+                                <span class="text-sm font-medium text-accent">Optimal</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-text-secondary mt-4">
+                            You're performing 15% better than similar profiles. Keep up the great work!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary to-secondary text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <h2 class="text-3xl lg:text-5xl font-bold">
+                    Ready to Achieve Your Financial Goals?
+                </h2>
+                <p class="text-xl text-primary-100 max-w-2xl mx-auto">
+                    Join thousands who've transformed their financial future with our AI-powered planning tools and personalized strategies.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="ai_financial_advisor.html" class="bg-white text-primary font-semibold py-4 px-8 rounded-lg hover:bg-primary-50 transition-colors">
+                        Get AI Recommendations
+                    </a>
+                    <a href="user_dashboard.html" class="border-2 border-white text-white font-semibold py-4 px-8 rounded-lg hover:bg-white hover:text-primary transition-colors">
+                        View Your Dashboard
+                    </a>
+                </div>
+                
+                <div class="flex items-center justify-center space-x-8 pt-8">
+                    <div class="flex items-center space-x-2">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Free planning tools</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>AI-powered insights</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Adaptive strategies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <svg class="h-8 w-8 text-accent" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L20 10H28L22 16L24 24L16 20L8 24L10 16L4 10H12L16 2Z"/>
+                            <circle cx="16" cy="16" r="3" fill="currentColor"/>
+                        </svg>
+                        <span class="text-xl font-bold">WealthWise AI</span>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Democratizing sophisticated investment guidance through AI-powered financial advisory services.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Platform</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="ai_financial_advisor.html" class="text-primary-200 hover:text-white transition-colors">AI Financial Advisor</a></li>
+                        <li><a href="market_analysis_dashboard.html" class="text-primary-200 hover:text-white transition-colors">Market Analysis</a></li>
+                        <li><a href="financial_planning_center.html" class="text-primary-200 hover:text-white transition-colors">Planning Center</a></li>
+                        <li><a href="user_dashboard.html" class="text-primary-200 hover:text-white transition-colors">Dashboard</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Learning Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Investment Guides</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Market Research</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Financial Calculators</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="security_trust.html" class="text-primary-200 hover:text-white transition-colors">Security & Privacy</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 WealthWise AI. All Rights Reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="javascript:void(0)" class="text-primary-200 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="text-primary-200 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    <a href="javascript:void(0)" class="text-primary-200 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calculator Modal -->
+    <div id="calculator-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6 border-b border-border">
+                    <div class="flex justify-between items-center">
+                        <h2 id="modal-title" class="text-2xl font-bold">Financial Calculator</h2>
+                        <button onclick="closeCalculator()" class="text-text-secondary hover:text-text-primary">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="modal-content" class="p-6">
+                    <!-- Calculator content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedGoal = 'retirement';
+        let selectedRisk = 'moderate';
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function scrollToGoalSetup() {
+            document.getElementById('goal-setup').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function selectGoal(goal, element) {
+            selectedGoal = goal;
+            
+            // Reset all goal options
+            document.querySelectorAll('.goal-option').forEach(option => {
+                option.classList.remove('border-primary', 'bg-primary-50', 'border-accent', 'bg-accent-50', 'border-secondary', 'bg-secondary-50', 'border-success', 'bg-success-50');
+                option.classList.add('border-border');
+            });
+            
+            // Highlight selected option
+            const colorMap = {
+                'retirement': ['border-primary', 'bg-primary-50'],
+                'home': ['border-accent', 'bg-accent-50'],
+                'education': ['border-secondary', 'bg-secondary-50'],
+                'emergency': ['border-success', 'bg-success-50']
+            };
+            
+            element.classList.remove('border-border');
+            element.classList.add(...colorMap[goal]);
+            
+            updateGoalDefaults();
+        }
+
+        function selectRisk(risk, element) {
+            selectedRisk = risk;
+            
+            // Reset all risk options
+            document.querySelectorAll('.risk-option').forEach(option => {
+                option.classList.remove('border-primary', 'bg-primary-50', 'border-success', 'bg-success-50', 'border-warning', 'bg-warning-50');
+                option.classList.add('border-border');
+            });
+            
+            // Highlight selected option
+            const colorMap = {
+                'conservative': ['border-success', 'bg-success-50'],
+                'moderate': ['border-primary', 'bg-primary-50'],
+                'aggressive': ['border-warning', 'bg-warning-50']
+            };
+            
+            element.classList.remove('border-border');
+            element.classList.add(...colorMap[risk]);
+        }
+
+        function updateGoalDefaults() {
+            const defaults = {
+                'retirement': { amount: 500000, timeline: 25, savings: 25000, monthly: 1200 },
+                'home': { amount: 100000, timeline: 5, savings: 15000, monthly: 1500 },
+                'education': { amount: 200000, timeline: 15, savings: 10000, monthly: 800 },
+                'emergency': { amount: 30000, timeline: 2, savings: 5000, monthly: 1000 }
+            };
+            
+            const goal = defaults[selectedGoal];
+            document.getElementById('goal-amount').value = goal.amount;
+            document.getElementById('timeline').value = goal.timeline;
+            document.getElementById('current-savings').value = goal.savings;
+            document.getElementById('monthly-contribution').value = goal.monthly;
+            
+            updateTimelineDisplay();
+        }
+
+        function updateTimelineDisplay() {
+            const timeline = document.getElementById('timeline').value;
+            document.getElementById('timeline-value').textContent = `${timeline} years`;
+        }
+
+        function generatePlan() {
+            // Simulate plan generation
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            button.textContent = 'Generating Your Plan...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+                
+                // Show success message
+                alert('Your personalized financial plan has been generated! Check your dashboard to view the complete strategy.');
+            }, 2000);
+        }
+
+        function openCalculator(type) {
+            const modal = document.getElementById('calculator-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const calculators = {
+                'retirement': {
+                    title: 'Retirement Planning Calculator',
+                    content: `
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Calculate Your Retirement Needs</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Current Age</label>
+                                        <input type="number" class="input-field" value="35" min="18" max="65">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Retirement Age</label>
+                                        <input type="number" class="input-field" value="65" min="50" max="75">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Current Annual Income</label>
+                                        <input type="number" class="input-field" value="75000" step="1000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Desired Retirement Income (%)</label>
+                                        <input type="range" class="w-full" min="50" max="100" value="80">
+                                        <div class="text-center text-sm text-text-secondary">80% of current income</div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Current Retirement Savings</label>
+                                        <input type="number" class="input-field" value="50000" step="1000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Expected Annual Return (%)</label>
+                                        <input type="number" class="input-field" value="7" min="3" max="12" step="0.1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Your Retirement Plan</h3>
+                                <div class="card bg-primary-50">
+                                    <div class="space-y-4">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-primary">$1,247,892</div>
+                                            <div class="text-sm text-text-secondary">Total needed at retirement</div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span>Monthly savings needed</span>
+                                                <span class="font-semibold">$1,456</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Years to retirement</span>
+                                                <span class="font-semibold">30</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Total contributions</span>
+                                                <span class="font-semibold">$524,160</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Investment growth</span>
+                                                <span class="font-semibold text-success">$723,732</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <h4 class="font-semibold">Social Security Estimate</h4>
+                                    <div class="bg-surface p-4 rounded-lg">
+                                        <div class="text-lg font-semibold">$2,847/month</div>
+                                        <div class="text-sm text-text-secondary">Estimated monthly benefit at full retirement age</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                'home': {
+                    title: 'Home Affordability Calculator',
+                    content: `
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Your Financial Information</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Annual Income</label>
+                                        <input type="number" class="input-field" value="85000" step="1000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Monthly Debt Payments</label>
+                                        <input type="number" class="input-field" value="450" step="50">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Down Payment Available</label>
+                                        <input type="number" class="input-field" value="60000" step="1000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Interest Rate (%)</label>
+                                        <input type="number" class="input-field" value="6.5" min="3" max="10" step="0.1">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Loan Term (years)</label>
+                                        <select class="input-field">
+                                            <option value="15">15 years</option>
+                                            <option value="30" selected>30 years</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">What You Can Afford</h3>
+                                <div class="card bg-accent-50">
+                                    <div class="space-y-4">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-accent">$425,000</div>
+                                            <div class="text-sm text-text-secondary">Maximum home price</div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span>Monthly payment</span>
+                                                <span class="font-semibold">$2,298</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Principal & Interest</span>
+                                                <span>$1,847</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Property taxes</span>
+                                                <span>$354</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Insurance</span>
+                                                <span>$97</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <h4 class="font-semibold">Debt-to-Income Ratio</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between text-sm">
+                                            <span>Total monthly debt</span>
+                                            <span>$2,748 (38.9%)</span>
+                                        </div>
+                                        <div class="w-full bg-border rounded-full h-2">
+                                            <div class="bg-success h-2 rounded-full" style="width: 38.9%"></div>
+                                        </div>
+                                        <div class="text-xs text-success">Excellent - Well within recommended 43% limit</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                'education': {
+                    title: 'Education Funding Calculator',
+                    content: `
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Education Planning Details</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Child's Current Age</label>
+                                        <input type="number" class="input-field" value="5" min="0" max="17">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">College Start Age</label>
+                                        <input type="number" class="input-field" value="18" min="16" max="22">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Current College Cost (Annual)</label>
+                                        <input type="number" class="input-field" value="35000" step="1000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Education Inflation Rate (%)</label>
+                                        <input type="number" class="input-field" value="5" min="3" max="8" step="0.1">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Current 529 Balance</label>
+                                        <input type="number" class="input-field" value="15000" step="1000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Expected Investment Return (%)</label>
+                                        <input type="number" class="input-field" value="6" min="3" max="10" step="0.1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Education Funding Plan</h3>
+                                <div class="card bg-secondary-50">
+                                    <div class="space-y-4">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-secondary">$194,567</div>
+                                            <div class="text-sm text-text-secondary">Total 4-year cost (inflated)</div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span>Monthly savings needed</span>
+                                                <span class="font-semibold">$847</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Years to save</span>
+                                                <span class="font-semibold">13</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Total contributions</span>
+                                                <span class="font-semibold">$132,252</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Investment growth</span>
+                                                <span class="font-semibold text-success">$62,315</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <h4 class="font-semibold">529 Plan Benefits</h4>
+                                    <div class="bg-surface p-4 rounded-lg space-y-2">
+                                        <div class="flex justify-between text-sm">
+                                            <span>Tax-free growth</span>
+                                            <span class="text-success font-medium">$62,315</span>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>State tax deduction</span>
+                                            <span class="text-success font-medium">$2,541/year</span>
+                                        </div>
+                                        <div class="text-xs text-text-secondary">Assumes 6% state tax rate and $3,000 annual deduction limit</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                'debt': {
+                    title: 'Debt Payoff Optimizer',
+                    content: `
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Your Debt Information</h3>
+                                <div class="space-y-4">
+                                    <div class="border border-border rounded-lg p-4">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="font-medium">Credit Card 1</span>
+                                            <span class="text-error">18.9% APR</span>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Balance: $8,500</span>
+                                            <span>Min Payment: $170</span>
+                                        </div>
+                                    </div>
+                                    <div class="border border-border rounded-lg p-4">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="font-medium">Credit Card 2</span>
+                                            <span class="text-error">22.4% APR</span>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Balance: $3,200</span>
+                                            <span>Min Payment: $64</span>
+                                        </div>
+                                    </div>
+                                    <div class="border border-border rounded-lg p-4">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="font-medium">Student Loan</span>
+                                            <span class="text-warning">4.5% APR</span>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Balance: $15,000</span>
+                                            <span>Min Payment: $156</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Extra Payment Available</label>
+                                        <input type="number" class="input-field" value="300" step="50">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Payoff Strategy Comparison</h3>
+                                <div class="space-y-4">
+                                    <div class="card bg-warning-50">
+                                        <h4 class="font-semibold text-warning mb-3">Avalanche Method (Recommended)</h4>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span>Total interest saved</span>
+                                                <span class="font-semibold text-success">$4,267</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Payoff time</span>
+                                                <span class="font-semibold">2.8 years</span>
+                                            </div>
+                                            <div class="text-xs text-text-secondary">Pay minimums, then attack highest interest rate first</div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-primary-50">
+                                        <h4 class="font-semibold text-primary mb-3">Snowball Method</h4>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span>Total interest saved</span>
+                                                <span class="font-semibold text-success">$3,891</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Payoff time</span>
+                                                <span class="font-semibold">2.9 years</span>
+                                            </div>
+                                            <div class="text-xs text-text-secondary">Pay minimums, then attack smallest balance first</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <h4 class="font-semibold">Recommended Payoff Order</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center space-x-3 p-3 bg-error-50 rounded-lg">
+                                            <span class="w-6 h-6 bg-error text-white rounded-full flex items-center justify-center text-xs font-bold">1</span>
+                                            <div class="flex-1">
+                                                <div class="font-medium">Credit Card 2</div>
+                                                <div class="text-xs text-text-secondary">22.4% APR - Highest interest</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-warning-50 rounded-lg">
+                                            <span class="w-6 h-6 bg-warning text-white rounded-full flex items-center justify-center text-xs font-bold">2</span>
+                                            <div class="flex-1">
+                                                <div class="font-medium">Credit Card 1</div>
+                                                <div class="text-xs text-text-secondary">18.9% APR</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-success-50 rounded-lg">
+                                            <span class="w-6 h-6 bg-success text-white rounded-full flex items-center justify-center text-xs font-bold">3</span>
+                                            <div class="flex-1">
+                                                <div class="font-medium">Student Loan</div>
+                                                <div class="text-xs text-text-secondary">4.5% APR - Lowest priority</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                'emergency': {
+                    title: 'Emergency Fund Calculator',
+                    content: `
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Your Monthly Expenses</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Housing (rent/mortgage)</label>
+                                        <input type="number" class="input-field" value="1800" step="50">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Food & Groceries</label>
+                                        <input type="number" class="input-field" value="600" step="25">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Transportation</label>
+                                        <input type="number" class="input-field" value="450" step="25">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Utilities</label>
+                                        <input type="number" class="input-field" value="200" step="25">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Insurance</label>
+                                        <input type="number" class="input-field" value="350" step="25">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Other essentials</label>
+                                        <input type="number" class="input-field" value="400" step="25">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Current emergency savings</label>
+                                        <input type="number" class="input-field" value="5000" step="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Emergency Fund Recommendations</h3>
+                                <div class="card bg-success-50">
+                                    <div class="space-y-4">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-success">$22,800</div>
+                                            <div class="text-sm text-text-secondary">Recommended 6-month fund</div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span>Monthly expenses</span>
+                                                <span class="font-semibold">$3,800</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Current savings</span>
+                                                <span class="font-semibold">$5,000</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Still needed</span>
+                                                <span class="font-semibold text-warning">$17,800</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <h4 class="font-semibold">Savings Timeline</h4>
+                                    <div class="space-y-3">
+                                        <div class="border border-border rounded-lg p-3">
+                                            <div class="flex justify-between items-center">
+                                                <span>Save $500/month</span>
+                                                <span class="font-semibold text-primary">2.9 years</span>
+                                            </div>
+                                        </div>
+                                        <div class="border border-border rounded-lg p-3">
+                                            <div class="flex justify-between items-center">
+                                                <span>Save $750/month</span>
+                                                <span class="font-semibold text-accent">1.9 years</span>
+                                            </div>
+                                        </div>
+                                        <div class="border border-border rounded-lg p-3">
+                                            <div class="flex justify-between items-center">
+                                                <span>Save $1,000/month</span>
+                                                <span class="font-semibold text-success">1.5 years</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-primary-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-primary mb-2">Pro Tips</h4>
+                                    <ul class="text-sm text-text-secondary space-y-1">
+                                        <li>• Keep funds in high-yield savings account</li>
+                                        <li>• Start with 3 months, build to 6 months</li>
+                                        <li>• Automate transfers to build consistently</li>
+                                        <li>• Consider money market accounts for better rates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                'investment': {
+                    title: 'Investment Goal Calculator',
+                    content: `
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Investment Parameters</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Investment Goal</label>
+                                        <input type="number" class="input-field" value="250000" step="5000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Time Horizon (years)</label>
+                                        <input type="number" class="input-field" value="15" min="1" max="40">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Initial Investment</label>
+                                        <input type="number" class="input-field" value="10000" step="1000">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Monthly Contribution</label>
+                                        <input type="number" class="input-field" value="800" step="50">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Expected Annual Return (%)</label>
+                                        <input type="number" class="input-field" value="8" min="3" max="15" step="0.1">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Risk Tolerance</label>
+                                        <select class="input-field">
+                                            <option value="conservative">Conservative (5-7%)</option>
+                                            <option value="moderate" selected>Moderate (7-9%)</option>
+                                            <option value="aggressive">Aggressive (9-12%)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-semibold">Investment Projection</h3>
+                                <div class="card bg-primary-50">
+                                    <div class="space-y-4">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-primary">$287,456</div>
+                                            <div class="text-sm text-text-secondary">Projected value in 15 years</div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span>Total contributions</span>
+                                                <span class="font-semibold">$154,000</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Investment growth</span>
+                                                <span class="font-semibold text-success">$133,456</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Goal achievement</span>
+                                                <span class="font-semibold text-success">115%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <h4 class="font-semibold">Monte Carlo Analysis</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center">
+                                            <span>Success Probability</span>
+                                            <span class="font-semibold text-success">89%</span>
+                                        </div>
+                                        <div class="w-full bg-border rounded-full h-3">
+                                            <div class="bg-success h-3 rounded-full" style="width: 89%"></div>
+                                        </div>
+                                        <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                                            <div>
+                                                <div class="font-medium text-success">Best Case</div>
+                                                <div class="text-text-secondary">$425K</div>
+                                            </div>
+                                            <div>
+                                                <div class="font-medium text-primary">Expected</div>
+                                                <div class="text-text-secondary">$287K</div>
+                                            </div>
+                                            <div>
+                                                <div class="font-medium text-warning">Worst Case</div>
+                                                <div class="text-text-secondary">$198K</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-accent-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-accent mb-2">Recommended Allocation</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between text-sm">
+                                            <span>US Stocks</span>
+                                            <span>60%</span>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>International Stocks</span>
+                                            <span>20%</span>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>Bonds</span>
+                                            <span>15%</span>
+                                        </div>
+                                        <div class="flex justify-between text-sm">
+                                            <span>REITs</span>
+                                            <span>5%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+            
+            title.textContent = calculators[type].title;
+            content.innerHTML = calculators[type].content;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCalculator() {
+            const modal = document.getElementById('calculator-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Initialize timeline slider
+        document.getElementById('timeline').addEventListener('input', updateTimelineDisplay);
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = event.target.closest('button');
+            
+            if (!menuButton && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Close calculator modal when clicking outside
+        document.getElementById('calculator-modal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeCalculator();
+            }
+        });
+
+        // Initialize default goal selection
+        document.addEventListener('DOMContentLoaded', function() {
+            const defaultGoalButton = document.querySelector('.goal-option');
+            if (defaultGoalButton) {
+                selectGoal('retirement', defaultGoalButton);
+            }
+            
+            const defaultRiskButton = document.querySelector('.risk-option[onclick*="moderate"]');
+            if (defaultRiskButton) {
+                selectRisk('moderate', defaultRiskButton);
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
