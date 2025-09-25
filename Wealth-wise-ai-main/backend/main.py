@@ -28,7 +28,7 @@ engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# --- DATABASE MODELS ---
+# --- DATABASE MODELS (This defines the structure of our table) ---
 class AnalysisRequest(Base):
     __tablename__ = "analysis_requests"
     id = Column(Integer, primary_key=True, index=True)
@@ -42,10 +42,10 @@ class AnalysisRequest(Base):
     suggested_action = Column(Text, nullable=True)
     graph_b64 = Column(Text, nullable=True)
 
-# Create the database tables if they don't exist
+# This command creates the table in your Neon database if it doesn't already exist.
 Base.metadata.create_all(bind=engine)
 
-# Dependency to get a DB session for each request
+# Dependency to get a fresh DB session for each API request.
 def get_db():
     db = SessionLocal()
     try:
@@ -69,9 +69,9 @@ class UserProfile(BaseModel):
     goals: str
     current_investments: str
 
-# --- DATA LAYER & AI SERVICES ---
+# --- DATA LAYER & AI SERVICES (These functions remain the same) ---
 def get_historical_market_data(api_key: str):
-    url = f"[https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey=](https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey=){api_key if api_key else 'demo'}"
+    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&outputsize=compact&apikey={api_key if api_key else 'demo'}"
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -152,11 +152,15 @@ def read_root():
 
 @app.post("/api/analyze")
 def analyze_profile(profile: UserProfile, db: Session = Depends(get_db)):
+    """
+    Orchestrates data retrieval, AI analysis, graph generation, AND SAVES TO DATABASE.
+    """
     api_key = os.getenv("FINANCIAL_DATA_API_KEY")
     historical_data = get_historical_market_data(api_key)
     ai_analysis = get_analysis_and_graph_data_from_nova(profile, historical_data)
     graph_b64 = plot_analysis_graph(ai_analysis.get("graph_data", {}))
 
+    # --- NEW: SAVE THE REQUEST AND RESPONSE TO THE DATABASE ---
     db_request = AnalysisRequest(
         age=profile.age,
         income=profile.income,
