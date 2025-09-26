@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1B365D; /* Deep trust foundation */
+  --color-primary-50: #F0F4F8; /* Very light primary */
+  --color-primary-100: #D9E2EC; /* Light primary */
+  --color-primary-200: #BCCCDC; /* Medium light primary */
+  --color-primary-300: #9FB3C8; /* Medium primary */
+  --color-primary-400: #829AB1; /* Medium dark primary */
+  --color-primary-500: #627D98; /* Base primary variant */
+  --color-primary-600: #486581; /* Dark primary variant */
+  --color-primary-700: #334E68; /* Darker primary */
+  --color-primary-800: #243B53; /* Very dark primary */
+  --color-primary-900: #1B365D; /* Primary base */
+
+  /* Secondary Colors */
+  --color-secondary: #2E5984; /* Supporting intelligence */
+  --color-secondary-50: #F1F5F9; /* Very light secondary */
+  --color-secondary-100: #E2E8F0; /* Light secondary */
+  --color-secondary-200: #CBD5E0; /* Medium light secondary */
+  --color-secondary-300: #A0AEC0; /* Medium secondary */
+  --color-secondary-400: #718096; /* Medium dark secondary */
+  --color-secondary-500: #4A5568; /* Base secondary variant */
+  --color-secondary-600: #2E5984; /* Secondary base */
+  --color-secondary-700: #2C5282; /* Dark secondary */
+  --color-secondary-800: #2A4365; /* Very dark secondary */
+  --color-secondary-900: #1A365D; /* Darkest secondary */
+
+  /* Accent Colors */
+  --color-accent: #00B4A6; /* Growth moments */
+  --color-accent-50: #F0FDFA; /* Very light accent */
+  --color-accent-100: #CCFBF1; /* Light accent */
+  --color-accent-200: #99F6E4; /* Medium light accent */
+  --color-accent-300: #5EEAD4; /* Medium accent */
+  --color-accent-400: #2DD4BF; /* Medium dark accent */
+  --color-accent-500: #14B8A6; /* Base accent variant */
+  --color-accent-600: #00B4A6; /* Accent base */
+  --color-accent-700: #0F766E; /* Dark accent */
+  --color-accent-800: #115E59; /* Very dark accent */
+  --color-accent-900: #134E4A; /* Darkest accent */
+
+  /* Background Colors */
+  --color-background: #FAFBFC; /* Clean thinking space */
+  --color-surface: #F5F7FA; /* Subtle content elevation */
+  --color-surface-hover: #EDF2F7; /* Surface hover state */
+
+  /* Text Colors */
+  --color-text-primary: #1A202C; /* Authoritative clarity */
+  --color-text-secondary: #4A5568; /* Supportive context */
+  --color-text-tertiary: #718096; /* Subtle information */
+  --color-text-inverse: #FFFFFF; /* White text */
+
+  /* Status Colors */
+  --color-success: #38A169; /* Financial wins celebration */
+  --color-success-50: #F0FFF4; /* Very light success */
+  --color-success-100: #C6F6D5; /* Light success */
+  --color-success-200: #9AE6B4; /* Medium light success */
+  --color-success-300: #68D391; /* Medium success */
+  --color-success-400: #48BB78; /* Medium dark success */
+  --color-success-500: #38A169; /* Success base */
+  --color-success-600: #2F855A; /* Dark success */
+  --color-success-700: #276749; /* Very dark success */
+  --color-success-800: #22543D; /* Darkest success */
+
+  --color-warning: #D69E2E; /* Helpful caution */
+  --color-warning-50: #FFFBEB; /* Very light warning */
+  --color-warning-100: #FEF5E7; /* Light warning */
+  --color-warning-200: #FED7AA; /* Medium light warning */
+  --color-warning-300: #FDBA74; /* Medium warning */
+  --color-warning-400: #F59E0B; /* Medium dark warning */
+  --color-warning-500: #D69E2E; /* Warning base */
+  --color-warning-600: #B45309; /* Dark warning */
+  --color-warning-700: #92400E; /* Very dark warning */
+  --color-warning-800: #78350F; /* Darkest warning */
+
+  --color-error: #E53E3E; /* Supportive correction */
+  --color-error-50: #FED7D7; /* Very light error */
+  --color-error-100: #FEB2B2; /* Light error */
+  --color-error-200: #FC8181; /* Medium light error */
+  --color-error-300: #F56565; /* Medium error */
+  --color-error-400: #E53E3E; /* Error base */
+  --color-error-500: #C53030; /* Dark error */
+  --color-error-600: #9B2C2C; /* Very dark error */
+  --color-error-700: #742A2A; /* Darkest error */
+
+  /* Border Colors */
+  --color-border: #E2E8F0; /* Subtle separation */
+  --color-border-light: #F7FAFC; /* Very light border */
+  --color-border-dark: #CBD5E0; /* Darker border */
+
+  /* Shadow Values */
+  --shadow-sm: 0 1px 2px 0 rgba(27, 54, 93, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(27, 54, 93, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(27, 54, 93, 0.08);
+  --shadow-xl: 0 20px 25px -5px rgba(27, 54, 93, 0.08);
+  --shadow-2xl: 0 25px 50px -12px rgba(27, 54, 93, 0.12);
+  --shadow-floating: 0 4px 20px rgba(27, 54, 93, 0.08);
+
+  /* Animation Timing */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 300ms ease-out;
+  --transition-slow: 500ms ease-out;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md border border-border p-6 transition-all duration-300 hover:shadow-lg;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .shadow-floating {
+    box-shadow: var(--shadow-floating);
+  }
+
+  .transition-smooth {
+    transition: all var(--transition-normal);
+  }
+
+  .transition-fast {
+    transition: all var(--transition-fast);
+  }
+
+  .transition-slow {
+    transition: all var(--transition-slow);
+  }
+}
